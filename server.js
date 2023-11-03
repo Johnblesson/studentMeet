@@ -4,7 +4,7 @@ require('dotenv').config()
 const path = require('path')
 const ejs = require('ejs')
 const session = require('express-session');
-// require('./server/database/db')
+require('./server/database/db')
 
 // Bulit in Middleware
 app.use(express.json());

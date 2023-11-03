@@ -52,12 +52,13 @@
 			
 			<!-- Registration Form -->
 			<form id="register" action="register" method="post" class="input-group">
-				<input type="text" class="input-field" placeholder="Full Name" required="required">
-				<input type="email" class="input-field" placeholder="Email Address" required="required">
+				<input type="text" class="input-field" name="fullName" placeholder="Full Name" required="required">
+				<input type="text" class="input-field" name="username" placeholder="Username" required="required">
+				<input type="email" class="input-field" name="email" placeholder="Email Address" required="required">
 				<input type="password" class="input-field" placeholder="Create Password" name="psame" required="required">
-				<input type="password" class="input-field" placeholder="Confirm Password" name="psame" required="required">
+				<!-- <input type="password" class="input-field" placeholder="Confirm Password" name="psame" required="required"> -->
 				<input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()">I agree to the Terms & Conditions
-				<button type="submit" id="btnSubmit" class="submit-btn reg-btn">Register</button>
+				<button type="submit" id="btnSubmit" class="submit-btn">Register</button>
 			</form>
 		</div>
 		<script type="text/javascript" src="js/script.js"></script>
