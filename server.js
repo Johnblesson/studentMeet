@@ -22,7 +22,7 @@ app.use(express.static('public'))
 
 // Add express-session middleware
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: process.env.SESSION_SECRET || 'secret',
     resave: false,
     saveUninitialized: true,
   }));
