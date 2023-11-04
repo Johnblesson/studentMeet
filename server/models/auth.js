@@ -16,6 +16,10 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         require: true,
+    },
+    image: {
+        type: String, // Store the image as a binary buffer
+        required: false,
     }
 })
 const Credential = mongoose.model('credential', userSchema)

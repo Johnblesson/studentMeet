@@ -2,18 +2,41 @@
 <html>
 <head>
 	<link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 	<title>Login SignUp</title>
 	<link rel="stylesheet" type="text/css" href="css/loginStyle.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- It will redirect to the Home Page after submitting the form -->
-  <script>
+  <!-- <script>
   $(document).ready(function(){
     $("form").submit(function(){
       alert("Great Job !");
     });
   });
-  </script>
+  </script> -->
+  <style>
+/* Style for the custom file upload button */
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #3498db;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Style for the file input element (hidden) */
+.input-field[type="file"] {
+  display: none;
+}
+  </style>
 </head>
 <body>
 		<div class="form-box">
@@ -53,15 +76,30 @@
 			</div>
 			
 			<!-- Registration Form -->
-			<form id="register" action="register" method="post" class="input-group">
-				<input type="text" class="input-field" name="fullName" placeholder="Full Name" required="required">
-				<input type="text" class="input-field" name="username" placeholder="Username" required="required">
-				<input type="email" class="input-field" name="email" placeholder="Email Address" required="required">
-				<input type="password" class="input-field" placeholder="Create Password" name="password" required="required">
-				<!-- <input type="password" class="input-field" placeholder="Confirm Password" name="psame" required="required"> -->
-				<input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()">I agree to the Terms & Conditions
-				<button type="submit" id="btnSubmit" class="submit-btn">Register</button>
-			</form>
+	<form id="register" action="register" method="post" class="input-group">
+	<input type="text" class="input-field" name="fullName" placeholder="Full Name" required="required">
+	<input type="text" class="input-field" name="username" placeholder="Username" required="required">
+	<input type="email" class="input-field" name="email" placeholder="Email Address" required="required">
+	<input type="password" class="input-field" placeholder="Create Password" name="password" required="required">
+  
+	<!-- Image Upload Input and Preview -->
+	<div class="image-upload">
+	  <label class="custom-file-upload">
+		<input type="file" class="input-field" name="image" accept="image/*" style="display: none;" onchange="showImagePreview(this)">
+		<i class="fas fa-upload"></i> Upload Photo
+	  </label>
+	  <!-- <div class="image-preview">
+		<img id="imagePreview" src="" alt="Image Preview">
+	  </div> -->
+	</div>
+	<!-- End of Image Upload Input and Preview -->
+  
+	<!-- Checkbox for Terms & Conditions -->
+	<!-- <input type="checkbox" class="check-box" id="chkAgree" onclick="goFurther()"> I agree to the Terms & Conditions -->
+	<button type="submit" id="btnSubmit" class="submit-btn">Register</button>
+  </form>
+		
+  
 		</div>
 		<script type="text/javascript" src="js/script.js"></script>
 </body>

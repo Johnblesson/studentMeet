@@ -11,6 +11,7 @@ const ensureAuthenticated = require('../middlewares/auth');
 router.post('/register', studentController.register);
 router.post('/login', studentController.login);
 router.get('/students', studentController.getAllStudents);
+router.get('/students/:id', studentController.getStudentById);
 router.get('/logout', studentController.logOut);
 
 // Routes

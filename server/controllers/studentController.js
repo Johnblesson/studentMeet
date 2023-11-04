@@ -28,7 +28,8 @@ exports.register = async (req, res) => {
         fullName: req.body.fullName, 
         username: req.body.username, 
         email: req.body.email, 
-        password: hashedPassword
+        password: hashedPassword,
+        image: req.body.image
     })
 
      // Check for duplicate usernames
@@ -65,6 +66,7 @@ exports.login = async (req, res) => {
         const passwordMatch = await bcrypt.compare(req.body.password, user.password);
 
         if(passwordMatch) {
+            req.session.user = user;
             res.render('index')
            // res.json({message: 'Login Successfully'})
 
@@ -85,6 +87,23 @@ exports.getAllStudents = async (req, res) => {
       res.status(500).json({ message: err.message });
     }
   }
+
+// Controller for GET a single student by ID
+exports.getStudentById = async (req, res) => {
+    try {
+      const studentId = req.params.id; // Assuming the student ID is passed as a route parameter
+      const student = await Credential.findById(studentId);
+  
+      if (!student) {
+        return res.status(404).json({ message: 'Student not found' });
+      }
+  
+      res.json(student);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+}
+  
 
   // Logout Controller
 exports.logOut = (req, res) => {

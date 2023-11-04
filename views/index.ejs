@@ -9,7 +9,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/user.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
 	<script>
 		$(window).on('scroll', function(){
   			if($(window).scrollTop()){
@@ -26,14 +29,19 @@
 		<nav>
 			<!-- <div class="logo"><img src="images/icon/slp-logo.png" alt="logo"></div> -->
 			<ul>
-				<li><a class="active" href="index">Home</a></li>
-				<li><a href="#portfolio_section">Portfolio</a></li>
-				<li><a href="#team_section">Team</a></li>
-				<li><a href="#services_section">Services</a></li>
-				<li><a href="#contactus_section">Contact</a></li>
+				<li><a class="active" href="index">Home <i class="fas fa-home"></i>
+				</a></li>
+				<li><a href="#portfolio_section">Portfolio <i class="fas fa-briefcase"></i>
+				</a></li>
+				<li><a href="#team_section">Team <i class="fas fa-users"></i>
+				</a></li>
+				<li><a href="#services_section">Services <i class="fas fa-cogs"></i>
+				</a></li>
+				<li><a href="#contactus_section">Contact <i class="fas fa-phone"></i>
+				</a></li>
 			</ul>
 			<div class="srch"><input type="text" class="search" placeholder="Search here..."><img src="images/icon/search.png" alt="search" onclick=slide()></div>
-			<a class="get-started" href="login">Get Started</a>
+			<a class="get-started" href="logout">Logout <i class="fas fa-sign-out-alt"></i></a>
 			<img src="images/icon/menu.png" class="menu" onclick="sideMenu(0)" alt="menu">
 		</nav>
 		<div class="head-container">
@@ -51,8 +59,9 @@
 		<div class="side-menu" id="side-menu">
 			<div class="close" onclick="sideMenu(1)"><img src="images/icon/close.png" alt=""></div>
 			<div class="user">
-				<img src="images/creator/roshan.jpeg" alt="Username">
-				<p>roshank9419</p>
+				<div id="usersContainer"></div>
+				 <!-- <img src="images/creator/blesson1.jpeg" alt="Username">
+				<p>johnblessonrowe</p>  -->
 			</div>
 			<ul>
 				<li><a href="#about_section">About</a></li>
