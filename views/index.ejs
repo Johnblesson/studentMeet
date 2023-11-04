@@ -4,7 +4,7 @@
 	<link rel="shortcut icon" type="png" href="images/icon/favicon.png">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Comaptible" content="IE=edge">
-	<title>LearnEd</title>
+	<title>Student Meet</title>
 	<meta name="desciption" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -244,17 +244,19 @@
 		<div class="csec"></div>
 		<div class="back-contact">
 			<div class="cc">
-			<form action="mailto:roshank9419@gmail.com" method="post" enctype="text/plain">
-				<label>First Name <span class="imp">*</span></label><label style="margin-left: 185px">Last Name <span class="imp">*</span></label><br>
+			<form action="contact" method="post">
+				<label name="firstName">First Name <span class="imp">*</span></label></label>
+				<label style="margin-left: 185px">Last Name <span class="imp">*</span></label><br>
 				<center>
-				<input type="text" name="" style="margin-right: 10px; width: 175px" required="required"><input type="text" name="lname" style="width: 175px" required="required"><br>
+				<input type="text" style="margin-right: 10px; width: 175px" required="required"><input type="text" name="lastName" style="width: 175px" required="required"><br>
 				</center>
+		
 				<label>Email <span class="imp">*</span></label><br>
-				<input type="email" name="mail" style="width: 100%" required="required"><br>
+				<input type="email" name="email" style="width: 100%" required="required"><br>
 				<label>Message <span class="imp">*</span></label><br>
 				<input type="text" name="message" style="width: 100%" required="required"><br>
 				<label>Additional Details</label><br>
-				<textarea name="addtional"></textarea><br>
+				<textarea name="additionalDetails"></textarea><br>
 				<button type="submit" id="csubmit">Send Message</button>
 			</form>
 			</div>
@@ -272,13 +274,13 @@
 
 	<div class="feedbox">
 		<div class="feed">
-			<form action="mailto:roshank9419@gmail.com" method="post" enctype="text/plain">
+			<form action="feedback" method="post">
 				<label>Your Name</label><br>
-				<input type="text" name="" class="fname" required="required"><br>
+				<input type="text" name="name" class="fname" required="required"><br>
 				<label>Email</label><br>
-				<input type="email" name="mail" required="required"><br>
+				<input type="email" name="email" required="required"><br>
 				<label>Additional Details</label><br>
-				<textarea name="addtional"></textarea><br>
+				<textarea name="additionalDetails"></textarea><br>
 				<button type="submit" id="csubmit">Send Message</button>
 			</form>
 		</div>
@@ -308,8 +310,8 @@
 				<h1 style="color: #fff">Our Newsletter</h1>
 				<div class="border"></div><br>
 				<p>Enter Your Email to get our News and updates.</p>
-				<form class="newsletter-form">
-					<input class="txtb" type="email" placeholder="Enter Your Email">
+				<form class="newsletter-form" action="newsletter" method="post">
+					<input class="txtb" type="email" name="email" placeholder="Enter Your Email">
 					<input class="btn" type="submit" value="Submit">
 				</form>
 			</div>

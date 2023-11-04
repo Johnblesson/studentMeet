@@ -12,7 +12,7 @@ fetch(STUDENTS_API)
     studentData.forEach((student) => {
       data1= `
         <div class="user">
-        <img src=${student.image} alt=${student.username}><br>
+        <img src="images/creator/blesson1.jpeg" alt="Username">
         <p>${student.username}</p><br>
         <p>${student.email}</p>
         </div>`;

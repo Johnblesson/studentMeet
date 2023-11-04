@@ -9,7 +9,7 @@ const feedbackSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    additiomalDetails: {
+    additionalDetails: {
         type: String,
         require: true,
     }

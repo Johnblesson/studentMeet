@@ -13,13 +13,13 @@ const contactSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    meessage: {
+    message: {
         type: String,
         require: true,
     },
-    additiomalDetails: {
+    additionalDetails: {
         type: String,
-        require: false,
+        require: true,
     }
 })
 const ContactForm = mongoose.model('contactForm', contactSchema)

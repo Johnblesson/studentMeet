@@ -3,9 +3,11 @@ const router = Router();
 
 // Import Controllers
 const studentController = require('../controllers/studentController');
+const allController = require('../controllers/allController');
 
 // Import Middlewares
 const ensureAuthenticated = require('../middlewares/auth');
+const checkFormSubmission = require('../middlewares/authForm');
 
 // Student Routes
 router.post('/register', studentController.register);
@@ -13,6 +15,18 @@ router.post('/login', studentController.login);
 router.get('/students', studentController.getAllStudents);
 router.get('/students/:id', studentController.getStudentById);
 router.get('/logout', studentController.logOut);
+
+// Contact Form Routes
+router.post('/contact', allController.createContactForm);
+router.get('/contact', allController.getAllContactForms);
+
+// Feedback Routes
+router.post('/feedback', allController.createFeedback);
+router.get('/get_feedback', allController.getAllFeedbacks);
+
+// Newsletter Routes
+router.post('/newsletter', allController.createNewsletter);
+router.get('/get_newsletter', allController.getAllNewsletters);
 
 // Routes
 router.get('/', (req, res) => {
@@ -47,8 +61,16 @@ router.get('/gate', ensureAuthenticated, (req, res) => {
     res.render('gate')
 })
 
-router.get('/success', (req, res) => {
+router.get('/success', checkFormSubmission, (req, res) => {
     res.render('success')
+})
+
+router.get('/feedback', checkFormSubmission, (req, res) => {
+    res.render('feedback')
+})
+
+router.get('/newsletter', checkFormSubmission, (req, res) => {
+    res.render('newsletter')
 })
 
 router.get('/forbidden', (req, res) => {
