@@ -22,7 +22,7 @@ app.use(express.static('public'))
 
 // Add express-session middleware
 app.use(session({
-    secret: process.env.SESSION_SECRET || 'secret',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
   }));
@@ -32,7 +32,6 @@ const authRoute = require('./server/routes/mainRoute')
 app.use(authRoute)
 
 // OAuth
-
 
 // Start the Server  
 const PORT = process.env.PORT || 8080

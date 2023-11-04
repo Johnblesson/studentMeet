@@ -8,6 +8,7 @@ const allController = require('../controllers/allController');
 // Import Middlewares
 const ensureAuthenticated = require('../middlewares/auth');
 const checkFormSubmission = require('../middlewares/authForm');
+const verifyToken = require('../middlewares/verifyToken');
 
 // Student Routes
 router.post('/register', studentController.register);
@@ -18,15 +19,18 @@ router.get('/logout', studentController.logOut);
 
 // Contact Form Routes
 router.post('/contact', allController.createContactForm);
-router.get('/contact', allController.getAllContactForms);
+router.get('/contact', verifyToken, allController.getAllContactForms);
 
 // Feedback Routes
 router.post('/feedback', allController.createFeedback);
-router.get('/get_feedback', allController.getAllFeedbacks);
+router.get('/get_feedback', verifyToken, allController.getAllFeedbacks);
 
 // Newsletter Routes
 router.post('/newsletter', allController.createNewsletter);
-router.get('/get_newsletter', allController.getAllNewsletters);
+router.get('/get_newsletter', verifyToken, allController.getAllNewsletters);
+
+// Login to get access to the protected routes (jwt)
+router.post('/api/login', allController.getToken);
 
 // Routes
 router.get('/', (req, res) => {

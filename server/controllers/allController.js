@@ -1,7 +1,9 @@
-const e = require('express');
+const jwt = require('jsonwebtoken');
+const AdminUser = require('../config/config')
 const contactForm = require('../models/contactForm');
 const Feedback = require('../models/feedback');
 const Newsletter = require('../models/newsletter');
+require('dotenv').config()
 
 // Create a new contact form
 exports.createContactForm = async (req, res) => {
@@ -127,4 +129,15 @@ exports.getAllNewsletters = async (req, res) => {
             message: err
         })
     }
+}
+
+// To get JWT token
+exports.getToken = (req, res) => {
+    // Mock user
+    // AdminUser
+    jwt.sign({ AdminUser }, process.env.JWT_SECRET, { expiresIn: '30s' }, (err, token) => {
+        res.json({
+            token
+        });
+    });
 }
